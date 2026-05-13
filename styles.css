@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edward Cullen | About Me</title>
+
+<style>
+.spin-edward{
+    animation: spin 3s linear infinite;
+    display: inline-block;
+}
+
+@keyframes spin{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+/* 🌙 BASE */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background: linear-gradient(to bottom, #0d0d0d, #2e2e2e);
+    font-family: Georgia, serif;
+    color:white;
+    overflow-y: auto;
+}
+
+/* ✨ RANDOM SPARKLES */
+.sparkle{
+    position:fixed;
+    width:6px;
+    height:6px;
+    background:white;
+    border-radius:50%;
+    box-shadow:0 0 10px white, 0 0 20px #ff4d6d;
+    opacity:0;
+    animation: floatSparkle 6s linear infinite;
+}
+
+@keyframes floatSparkle{
+    0%{
+        transform: translateY(100vh) scale(0);
+        opacity:0;
+    }
+    20%{
+        opacity:1;
+    }
+    100%{
+        transform: translateY(-10vh) scale(1.2);
+        opacity:0;
+    }
+}
+
+/* 🌙 HEADER */
+header{
+    text-align:center;
+    padding:50px 20px;
+    background: rgba(0,0,0,0.75);
+}
+
+header h1{
+    font-size:75px;
+    text-shadow:0 0 25px crimson;
+}
+
+header p{
+    font-style:italic;
+    font-size:22px;
+    color:#ccc;
+}
+
+/* 🌙 LAYOUT */
+.container{
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+    padding:50px 20px;
+}
+
+.profile{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:center;
+    gap:40px;
+}
+
+/* 🧛‍♂️ SPINNING IMAGE */
+.profile img{
+    width:520px;
+    height:520px;
+    object-fit:cover;
+    border-radius:20px;
+    border:4px solid silver;
+    box-shadow:0 0 30px rgba(255,255,255,0.25);
+
+    animation: spin 8s linear infinite;
+}
+
+@keyframes spin{
+    from{ transform: rotate(0deg); }
+    to{ transform: rotate(360deg); }
+}
+
+/* 🌙 BOXES */
+.bio, .section{
+    background:rgba(255,255,255,0.06);
+    padding:30px;
+    border-radius:20px;
+    margin-top:40px;
+}
+
+/* 🌙 TEXT */
+.section h2{
+    color:#ff4d6d;
+    margin-bottom:15px;
+}
+
+.section ul{
+    line-height:2;
+    padding-left:20px;
+}
+
+/* 💬 QUOTE */
+.quote{
+    margin-top:50px;
+    text-align:center;
+    font-size:26px;
+    font-style:italic;
+    color:#ffd6df;
+    text-shadow:0 0 10px crimson;
+}
+
+/* 🌙 FOOTER */
+footer{
+    margin-top:50px;
+    text-align:center;
+    padding:20px;
+    background:black;
+    color:#999;
+}
+
+<style>
+
+<head>
+
+<body>
+/* 🌙 NAV BOX (THE TAB CONTAINER) */
+.nav-box{
+    position: sticky;
+    top: 0;
+
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    padding: 18px;
+
+    background: rgba(0,0,0,0.95);
+
+    border-bottom: 2px solid crimson;
+
+    z-index: 999;
+}
+
+/* 🌙 TABS (THE BUTTONS) */
+.nav-box a{
+    color: white !important;
+    text-decoration: none !important;
+
+    font-family: 'Cinzel', serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+
+    padding: 12px 24px;
+
+    border: 2px solid crimson;
+    border-radius: 30px;
+
+    background: rgba(220,20,60,0.15);
+
+    transition: 0.25s ease;
+
+    box-shadow: 0 0 10px rgba(220,20,60,0.3);
+}
+
+/* 🌙 HOVER EFFECT */
+.nav-box a:hover{
+    background: crimson;
+    transform: translateY(-2px);
+    box-shadow: 0 0 18px crimson;
+}
+
+/* 🌙 ACTIVE TAB */
+.nav-box a.active{
+    background: crimson;
+    color: white !important;
+}
+<header>
+    <h1>Edward Cullen</h1>
+    <p>"And so the lion fell in love with the lamb."</p>
+</header>
+
+<!-- ✨ RANDOM SPARKLES -->
+<div class="sparkle" style="left:10%; animation-delay:0s;"></div>
+<div class="sparkle" style="left:25%; animation-delay:1s;"></div>
+<div class="sparkle" style="left:40%; animation-delay:2s;"></div>
+<div class="sparkle" style="left:60%; animation-delay:0.5s;"></div>
+<div class="sparkle" style="left:80%; animation-delay:1.5s;"></div>
+<div class="sparkle" style="left:90%; animation-delay:3s;"></div>
+
+<div class="container">
+
+    <div class="profile">
+
+        <img src="https://hips.hearstapps.com/sev.h-cdn.co/assets/15/20/1431453323-edwadposter.jpg?resize=980:*" alt="Edward Cullen">
+
+        <div class="bio">
+            <h2>About Me</h2>
+            <p>Edward Anthony Masen Cullen</p>
+            <p>Vampire born 1901, turned 1918</p>
+            <p>Mind reading ability</p>
+        </div>
+
+    </div>
+
+    <div class="section">
+        <h2>My Story</h2>
+        <ul>
+            <li>Saved by Carlisle Cullen</li>
+            <li>Lives on animal blood</li>
+            <li>Met Bella Swan</li>
+            <li>Married Bella</li>
+            <li>Has daughter Renesmee</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Abilities</h2>
+        <ul>
+            <li>Mind reading</li>
+            <li>Super speed</li>
+            <li>Super strength</li>
+            <li>Immortality</li>
+        </ul>
+    </div>
+
+    <div class="quote">
+        “Before you, my life was like a moonless night.”
+    </div>
+
+</div>
+
+<footer>
+    Twilight Forever 🖤
+</footer>
+
+</body>
+</html>
