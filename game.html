@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Twilight Personality Quiz</title>
+
+<style>
+
+/* 🌙 BACKGROUND */
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background: radial-gradient(circle at top, #1c2b2f, #0b0f10);
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+/* 🌙 CARD */
+.card{
+    width:450px;
+    background:rgba(255,255,255,0.08);
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 0 25px rgba(0,0,0,0.5);
+}
+
+/* 🌙 TITLE */
+h1{
+    color:#ffd27a;
+    margin-bottom:10px;
+}
+
+/* 🌙 QUESTION */
+#question{
+    font-size:18px;
+    margin:20px 0;
+}
+
+/* 🌙 BUTTONS */
+button{
+    padding:10px 15px;
+    margin:8px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:15px;
+}
+
+.yes{ background:#4caf50; color:white; }
+.no{ background:#f44336; color:white; }
+
+#restart{
+    display:none;
+    background:#2196f3;
+    color:white;
+    margin-top:15px;
+}
+
+/* 🌙 RESULT IMAGE */
+img{
+    width:200px;
+    border-radius:12px;
+    margin-top:15px;
+    box-shadow:0 0 15px rgba(255,255,255,0.2);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <h1>🌙 Twilight Personality Quiz</h1>
+
+    <p id="question">Do you value loyalty above everything?</p>
+
+    <button class="yes" onclick="answer(1)">Yes</button>
+    <button class="no" onclick="answer(0)">No</button>
+
+    <button id="restart" onclick="restart()">Try Again</button>
+
+</div>
+
+<script>
+
+let step = 0;
+let score = 0;
+
+/* 🌙 QUESTIONS */
+const questions = [
+    "Do you value loyalty above everything?",
+    "Do you fall in love deeply and quickly?",
+    "Do you prefer protecting others over yourself?",
+    "Do you enjoy being mysterious or quiet?",
+    "Do you trust your instincts more than logic?"
+];
+
+/* 🌙 CHARACTER RESULTS */
+function showResult(){
+
+    let resultHTML = "";
+
+    if(score >= 4){
+        resultHTML = `
+            <h2>You are EDWARD 🧛</h2>
+            <img src="https://upload.wikimedia.org/wikipedia/en/6/69/Edward_Cullen.jpg" alt="Edward">
+            <p>Brooding, protective, deeply emotional, and loyal.</p>
+        `;
+    }
+
+    else if(score == 3){
+        resultHTML = `
+            <h2>You are BELLA 🌙</h2>
+            <img src="https://s.yimg.com/ny/api/res/1.2/er81v4apqLp44kC3yts1mA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTEzNjA7Y2Y9d2VicA--/https://media.zenfs.com/en_US/News/HollywoodLife.com/052912_KstewBella_ftr120529091706.jpg" alt="Bella">
+            <p>Emotional, strong-willed, and guided by love.</p>
+        `;
+    }
+
+    else if(score == 2){
+        resultHTML = `
+            <h2>You are JACOB 🐺</h2>
+            <img src="https://i.pinimg.com/736x/e5/31/3b/e5313b1eb1534999dbaeccb5fc091ed1.jpg" alt="Jacob">
+            <p>Loyal, passionate, and protective of the people you love.</p>
+        `;
+    }
+
+    else{
+        resultHTML = `
+            <h2>You are ALICE ✨</h2>
+            <img src="https://static.wikia.nocookie.net/twilightsaga/images/0/08/Alice_Cullen_04.jpg/revision/latest/scale-to-width-down/425?cb=20110630083711.jpg" alt="Alice">
+            <p>Energetic, intuitive, and always ahead of the future.</p>
+        `;
+    }
+
+    document.querySelector(".card").innerHTML = resultHTML + `<br><button onclick="restart()">Try Again</button>`;
+}
+
+/* 🌙 ANSWER LOGIC */
+function answer(val){
+
+    score += val;
+    step++;
+
+    if(step < questions.length){
+        document.getElementById("question").innerText = questions[step];
+    } else {
+        showResult();
+    }
+}
+
+/* 🌙 RESTART */
+function restart(){
+    step = 0;
+    score = 0;
+    location.reload();
+}
+
+</script>
+
+</body>
+</html>
